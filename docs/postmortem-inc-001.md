@@ -65,3 +65,17 @@
 - Itens pendentes:
 - Próxima revisão:
 - Critério de encerramento do postmortem:
+
+
+## Anexos e Referências
+- Evidências (logs, métricas, gráficos):
+- Canal/ticket do incidente:
+- Runbooks, RFCs e ADRs relacionados:
+- Links de PRs/issues das ações corretivas:
+
+## Checklist de Qualidade (pré-entrega)
+- [ ] Impacto e janela do incidente quantificados.
+- [ ] Linha do tempo completa com evidências.
+- [ ] Causa raiz e fatores contribuintes descritos.
+- [ ] Ações corretivas/preventivas com dono e prazo.
+- [ ] Premissas, lacunas, riscos e acompanhamento preenchidos.
