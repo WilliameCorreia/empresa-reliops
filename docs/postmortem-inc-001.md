@@ -1,7 +1,7 @@
 # INC-001: Sobrecarga do Serviço de Processamento por Volume Inesperado de Eventos
 
 - **Status:** Concluído
-- **Severidade:** SEV2
+- **Severidade:** SEV1
 - **Período do incidente:** 2026-03-10 14:47 até 2026-03-10 17:23
 - **Autores:** Grupo ReliOps — Pós-graduação UNIFOR
 - **Times envolvidos:** SRE, Engenharia de Plataforma, Suporte ao Cliente
@@ -30,7 +30,13 @@
 
 **Premissas** — o que está sendo assumido para elaborar o documento:
 
-1. As informações descritas em `src/incidente-resumo.md` representam fielmente o que ocorreu durante o incidente.
+1. As seguintes informações do cenário são assumidas como verdadeiras para elaborar este documento:
+   - A plataforma ReliOps atende clientes com monitoramento de aplicações e alertas em tempo real
+   - O serviço principal depende de uma API de ingestão de eventos e de um pipeline de processamento
+   - O SLO contratado com os clientes é de 99,9% de disponibilidade mensal
+   - Durante um pico de volume, o serviço de processamento entrou em saturação — alertas foram disparados com atraso e dashboards ficaram desatualizados
+   - A mitigação inicial restaurou o serviço, mas sem registro formal das ações realizadas
+   - Não existia template padrão de postmortem, a linha do tempo ficou incompleta e as ações corretivas foram distribuídas entre times sem responsável e prazo definidos
 2. A duração estimada de 2h 36min é baseada na sequência lógica dos eventos descritos no cenário, já que horários exatos não foram fornecidos.
 3. O SLO de 99,9% de disponibilidade mensal é o contrato de referência para calcular o impacto ao cliente.
 4. A solução emergencial aplicada foi eficaz e o serviço retornou ao estado normal após a mitigação.
@@ -283,7 +289,7 @@ O incidente foi declarado encerrado às 17:23 quando os seguintes critérios for
 
 1. Adotar **Doc as Code para postmortems**: documentos versionados no repositório, com revisão em equipe antes de publicar — garante que o aprendizado de cada incidente fique registrado e acessível para toda a organização.
 2. Formalizar a **cultura blameless**: o foco de todo postmortem deve ser melhorar o sistema e os processos, não apontar culpados. A linguagem deve ser neutra e orientada ao aprendizado. O cliente T-2204 agiu de boa-fé; a falha foi da plataforma, não do cliente.
-3. Definir **SLO interno para tempo de detecção**: uma empresa de observabilidade não pode demorar 41 minutos para perceber um problema no próprio sistema. Proposta: tempo de detecção de incidentes SEV2 internos < 5 minutos.
+3. Definir **SLO interno para tempo de detecção**: uma empresa de observabilidade não pode demorar 41 minutos para perceber um problema no próprio sistema. Proposta: tempo de detecção de incidentes SEV1 internos < 5 minutos.
 4. Criar **rotina mensal de revisão das ações preventivas abertas** — evitar que ações definidas em postmortems fiquem esquecidas sem implementação.
 
 ---

@@ -168,7 +168,7 @@ Agradecemos a atenção do Professor Arimatéia e abrimos para perguntas."
 
 | Pergunta provável | Quem responde | Resposta-chave |
 |---|---|---|
-| Por que SEV2 e não SEV1? | Pessoa 1 ou 4 | SEV1 é interrupção total; o serviço ficou degradado (lento, com atraso), mas não saiu do ar |
+| Por que SEV1 e não SEV2? | Pessoa 1 ou 4 | Embora o serviço não tenha ficado completamente fora do ar, o impacto foi funcionalmente equivalente a uma indisponibilidade total: alertas com 34 minutos de atraso em uma plataforma de observabilidade falham na proposta de valor central do produto. Além disso, o SLO foi violado em 356% — um estouro dessa magnitude justifica a classificação mais alta |
 | Por que versão 1.0.0? | Pessoa 6 | Primeira versão aprovada; SemVer garante rastreabilidade — PATCH para correções, MINOR para novas seções, MAJOR para reestruturação |
 | O que é blameless? | Pessoa 6 | Cultura de postmortem sem apontar culpados — foco em melhorar o sistema e os processos |
 | Por que os horários são estimados? | Qualquer pessoa | O cenário não forneceu horários exatos; todas as estimativas estão sinalizadas no documento e registradas nas lacunas |
